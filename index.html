@@ -1,1 +1,136 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIPES - Sistem Pelanggaran Siswa</title>
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  margin: 0;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+header {
+  background: #1d4ed8;
+  color: white;
+  padding: 24px;
+}
+header h1 { margin: 0 0 6px; }
+.container {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 15px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+.card, .form-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+}
+.card h2 { color: #1d4ed8; }
+label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 7px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+}
+button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #1d4ed8;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media(max-width:600px) {
+  .container { margin: 10px auto; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SIPES</h1>
+  <p>Sistem Informasi Pelanggaran Siswa</p>
+</header>
+
+<div class="container">
+  <h2>Dashboard Guru</h2>
+  <p>Selamat datang di aplikasi SIPES.</p>
+
+  <div class="cards">
+    <div class="card">
+      <p>Total Siswa</p>
+      <h2>0</h2>
+    </div>
+    <div class="card">
+      <p>Total Pelanggaran</p>
+      <h2>0</h2>
+    </div>
+  </div>
+
+  <div class="form-box">
+    <h3>Catat Pelanggaran Siswa</h3>
+
+    <form id="form">
+      <label>Nama Guru</label>
+      <input type="text" placeholder="Masukkan nama guru" required>
+
+      <label>Kelas</label>
+      <select required>
+        <option value="">Pilih kelas</option>
+        <option>X TKJ</option>
+        <option>XI TKJ</option>
+        <option>XII TKJ</option>
+      </select>
+
+      <label>Nama Siswa</label>
+      <input type="text" placeholder="Masukkan nama siswa" required>
+
+      <label>Jenis Pelanggaran</label>
+      <select required>
+        <option value="">Pilih pelanggaran</option>
+        <option>Terlambat</option>
+        <option>Tidak memakai atribut</option>
+        <option>Tidak mengerjakan tugas</option>
+        <option>Melanggar tata tertib</option>
+      </select>
+
+      <label>Keterangan</label>
+      <textarea rows="3" placeholder="Keterangan tambahan"></textarea>
+
+      <button type="submit">Simpan Pelanggaran</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  alert("Tampilan formulir berhasil diuji. Database belum terhubung.");
+});
+</script>
+
+</body>
+</html>
+
